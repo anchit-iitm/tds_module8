@@ -1,14 +1,15 @@
 import streamlit as st
-import pandas as pd
-from sklearn import datasets
-from sklearn.ensemble import RandomForestClassifier
-import pickle
 
-st.write("""
-# Larger Value Checker App
-This app checks for the greater value amoung the 2 given values
-""")
+def find_largest(val1, val2, val3):
+    largest = max(val1, val2, val3)
+    return largest
 
-st.header('User Input Parameters')
+st.title("Find the largest among the 3 given numbers(value greater than the other two).")
 
-def user_input_features():
+value1 = st.number_input("Enter the first number")
+value2 = st.number_input("Enter the second number")
+value3 = st.number_input("Enter the third number")
+
+if st.button("Find the largest number"):
+    largest = find_largest(value1, value2, value3)
+    st.write(f"The largest number is {largest}")
